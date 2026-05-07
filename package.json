@@ -1,0 +1,22 @@
+{
+  "name": "-apin2-marilia-emanuelly-yasmin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariliavieira10-droid/-ApiN2-marilia-emanuelly-yasmin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/mariliavieira10-droid/-ApiN2-marilia-emanuelly-yasmin/issues"
+  },
+  "homepage": "https://github.com/mariliavieira10-droid/-ApiN2-marilia-emanuelly-yasmin#readme"
+}
