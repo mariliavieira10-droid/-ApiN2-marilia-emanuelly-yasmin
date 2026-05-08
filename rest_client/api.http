@@ -1,0 +1,20 @@
+### Configuraçoes Globais 
+@baseUrl = http://localhost:3000
+@contentetType = application/json
+
+### Verifica o status do servidor 
+GET{{baseUrl}}/api/info 
+Accept: {{contentType}}
+
+### Testa o Middleware
+GET{{baseUrl}}/api/info/42
+Accept: {{contentType}}
+
+###Testa o Middleware
+GET{{baseUrl}}/api/info/ABC
+Accept: {{contentType}} 
+
+### Testa o Middleware 
+GET{{baseUrl}}/api/info/7
+Accept:{{contentType}}
+
