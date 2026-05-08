@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/mariliavieira10-droid/-ApiN2-marilia-emanuelly-yasmin/issues"
   },
-  "homepage": "https://github.com/mariliavieira10-droid/-ApiN2-marilia-emanuelly-yasmin#readme"
+  "homepage": "https://github.com/mariliavieira10-droid/-ApiN2-marilia-emanuelly-yasmin#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14"
+  }
 }
