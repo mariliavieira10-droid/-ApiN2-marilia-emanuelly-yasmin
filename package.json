@@ -21,6 +21,7 @@
   "homepage": "https://github.com/mariliavieira10-droid/-ApiN2-marilia-emanuelly-yasmin#readme",
   "dependencies": {
     "cors": "^2.8.6",
+    "ejs": "^5.0.2",
     "express": "^5.2.1",
     "nodemon": "^3.1.14"
   }
