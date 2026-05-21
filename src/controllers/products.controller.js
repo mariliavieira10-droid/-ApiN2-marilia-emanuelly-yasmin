@@ -1,4 +1,7 @@
-    async getProductById(req, res, next) {
+export default class ProductsController {
+  constructor() {}
+
+  async getProductById(req, res, next) {
     try {
       const {id} = req.params; // Captura o "id" da URL
       const product = {id: 1, nome: "Teclado", disponivel: true}; // simulação de acesso ao BD
@@ -12,3 +15,5 @@
       next(error);
     }
   }
+
+}
