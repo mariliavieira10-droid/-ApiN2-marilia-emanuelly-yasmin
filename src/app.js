@@ -6,8 +6,15 @@ import express from "express";
 import path from "node:path";
 
 const app = express();
+
+// Configurações do EJS
+app.set("view engine", "ejs");
+app.set("views", path.join(import.meta.dirname, "views")); // Node.js 20.11+
+
+
 // Middlewares
-app.use(express.static(path.join(import.meta.dirname, "public")));
+console.log("public:", path.join(import.meta.dirname, "..", "public"));
+app.use(express.static(path.join(import.meta.dirname, "..", "public")));
 app.use(express.json()); // Importante para rotas REST
 
 app.use(mcors);
@@ -17,14 +24,16 @@ app.use(mdebug);
 app.use("/api", apiRouter);
 
 
-// Configurações do EJS
-app.set("view engine", "ejs");
-app.set("views", path.join(import.meta.dirname, "views")); // Node.js 20.11+
 
 // --- ROTA DE VIEW (EJS) ---
 app.get("/home", (req, res) => {
   res.render("home"); // Renderiza o esqueleto da página
 });
+
+app.get("/test", (req, res) => {
+  res.render("test"); // Renderiza o esqueleto da página
+});
+
 app.get("/about", (req, res) => {
   res.render("about");
 });
@@ -32,7 +41,13 @@ app.get("/contact", (req, res) => {
   res.render("contact");
 });
 app.get("/products", (req, res) => {
-  res.render("products");
+  const products = [
+    {id: 1, nome: "Teclado", disponivel: true},
+    {id: 2, nome: "Mouse", disponivel: true},
+    {id: 3, nome: "Monitor", disponivel: false},
+    {id: 4, nome: "Caixa de Som", disponivel: false},
+  ];
+  res.render("products", {listaProdutos: products});
 });
 
 
