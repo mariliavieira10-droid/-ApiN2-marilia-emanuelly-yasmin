@@ -1,4 +1,5 @@
 import {router as apiRouter} from "./routes/api.routes.js";
+import {router as productsRouter} from "./routes/products.routes.js";
 import {mdebug} from "./middlewares/debug.middleware.js";
 import {notFound, errorHandler} from "./middlewares/errors.middleware.js";
 import {mcors} from "./middlewares/mcors.middleware.js";
@@ -22,7 +23,7 @@ app.use(express.json());
 app.use(mdebug);
 
 app.use("/api", apiRouter);
-
+app.use("/api", productsRouter);
 
 
 // --- ROTA DE VIEW (EJS) ---
@@ -41,15 +42,8 @@ app.get("/contact", (req, res) => {
   res.render("contact");
 });
 app.get("/products", (req, res) => {
-  const products = [
-    {id: 1, nome: "Teclado", disponivel: true},
-    {id: 2, nome: "Mouse", disponivel: true},
-    {id: 3, nome: "Monitor", disponivel: false},
-    {id: 4, nome: "Caixa de Som", disponivel: false},
-  ];
-  res.render("products", {listaProdutos: products});
+  res.render("products"); // o cliente obterá os dados via fetch
 });
-
 
 app.use(notFound);
 app.use(errorHandler);

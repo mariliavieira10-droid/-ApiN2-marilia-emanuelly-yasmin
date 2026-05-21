@@ -15,15 +15,7 @@
   </head>
   <body>
 
-   <div class="container">
-    <% listaProdutos.forEach(produto => { %>
-    <div class="card">
-        <h3><%= produto.nome %></h3>
-
-        <p>Status: <%= produto.disponivel ? "Em estoque" : "Indisponível" %></p>
-    </div>
-    <% }); %>
-  </div>
+    <div id="container-produtos" class="container"></div>
 
     <!-- Importando o arquivo JS da pasta public/js -->
     <script
