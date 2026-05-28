@@ -4,12 +4,16 @@ export default class ProductsController {
   async getProducts(req, res, next) {
     try {
       const products = [
-        {id: 1, nome: "Teclado", disponivel: true},
-        {id: 2, nome: "Mouse", disponivel: true},
-        {id: 3, nome: "Monitor", disponivel: false},
-        {id: 4, nome: "Caixa de Som", disponivel: false},
+        { id: 1, nome: "Action Figure", disponivel: true },
+        { id: 2, nome: "Mangá One Piece (Primeiros Vols.)", disponivel: true },
+        {
+          id: 3,
+          nome: "Mangá Cavaleiros do Zodiaco(Lim. Ed.)",
+          disponivel: false,
+        },
+        { id: 4, nome: "Camisas Personalizadas", disponivel: false },
       ];
-      res.json({productsList: products});
+      res.json({ productsList: products });
     } catch (error) {
       next(error);
     }
@@ -17,11 +21,11 @@ export default class ProductsController {
 
   async getProductById(req, res, next) {
     try {
-      const {id} = req.params; // Captura o "id" da URL
-      const product = {id: 1, nome: "Teclado", disponivel: true}; // simulação de acesso ao BD
+      const { id } = req.params; // Captura o "id" da URL
+      const product = { id: 1, nome: "Action Figure", disponivel: true }; // simulação de acesso ao BD
 
       if (!product) {
-        return res.status(404).json({message: "Produto não encontrado"});
+        return res.status(404).json({ message: "Produto não encontrado" });
       }
 
       res.json(product);
@@ -29,5 +33,4 @@ export default class ProductsController {
       next(error);
     }
   }
-
 }
